@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>CampusX — Discover Campus Events</title>
+      <meta name="description" content="Join campus events, clubs, and student communities. Discover hackathons, workshops, cultural fests, and more on CampusX.">
+      <meta name="keywords" content="campus events, student clubs, hackathons, workshops, university life, campus community">
+      <meta name="author" content="CampusX Team">
+      <meta name="canonical" href="https://campus-x.example.com/">
+      <meta property="og:title" content="CampusX — Discover Campus Events">
+      <meta property="og:description" content="Join campus events, clubs, and student communities at CampusX.">
+      <meta property="og:image" content="https://campus-x.example.com/assets/logo-512.png">
+      <meta property="og:url" content="https://campus-x.example.com/">
+      <meta property="og:type" content="website">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="CampusX — Discover Campus Events">
+      <meta name="twitter:description" content="Join campus events, clubs, and student communities at CampusX.">
+      <meta name="twitter:image" content="https://campus-x.example.com/assets/logo-512.png">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+      <meta name="theme-color" content="#071226">
+      <link rel="manifest" href="/manifest.json">
+      <link rel="preload" href="/assets/logo.svg" as="image">
+      <link rel="preload" href="/styles/aliases.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="/styles/aliases.css"></noscript>
+      <link rel="prefetch" href="/signup.html">
+      <link rel="prefetch" href="/clubs.html">
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = { theme: { extend: { colors: { accentFrom: '#22d3ee', accentTo: '#7c3aed' }, boxShadow: { soft: '0 18px 40px rgba(2,6,23,0.6)' }, fontFamily: { sans: ['Poppins','ui-sans-serif','system-ui'] } } } }
+      </script>
+      <link rel="stylesheet" href="styles/aliases.css">
+      <style>
+        :root{--accent-from:#22d3ee;--accent-to:#7c3aed}
+        html,body{height:100%}
+        body{font-family:Poppins,system-ui;background:var(--tw-color-bg, #060818)}
+        .glass{background:rgba(8,10,14,0.45);backdrop-filter:blur(6px);border:1px solid rgba(148,163,184,0.06)}
+        .fade-up{opacity:0;transform:translateY(8px);animation:fadeUp .6s ease forwards}
+        @keyframes fadeUp{to{opacity:1;transform:none}}
+        .btn-anim{transition:transform .3s, box-shadow .3s}
+        .btn-anim:active{transform:scale(.97)}
+      </style>
+    </head>
+    <body class="bg-slate-950 text-slate-100 antialiased">
+
+      <!-- NAVBAR -->
+      <header class="sticky top-0 z-50 glass px-4 py-4 border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-8">
+          <a href="index.html" class="flex items-center justify-center flex-shrink-0">
+            <span class="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">CampusX</span>
+          </a>
+          <nav class="hidden lg:flex items-center gap-8 text-slate-300">
+            <a href="index.html" class="hover:text-slate-100 transition-colors duration-200">Home</a>
+            <a href="clubs.html" class="hover:text-slate-100 transition-colors duration-200">Clubs</a>
+            <a href="my-events.html" class="hover:text-slate-100 transition-colors duration-200">Events</a>
+          </nav>
+
+          <div class="flex-1 hidden md:flex justify-center max-w-sm">
+            <label class="relative w-full">
+              <input placeholder="Search events..." class="w-full rounded-full bg-slate-900/50 border border-slate-700 px-4 py-2.5 pl-10 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-transparent transition-all duration-300" />
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">🔍</span>
+            </label>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <a href="login.html" class="hidden md:inline text-slate-300 hover:text-white transition-colors duration-200 text-sm font-medium">Login</a>
+            <a href="signup.html" class="hidden md:inline px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white rounded-full font-semibold text-sm transition-all duration-200 transform hover:scale-105">Sign Up</a>
+            <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg glass hover:bg-slate-800/50 transition-colors">☰</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="max-w-7xl mx-auto px-4 py-16">
+
+        <!-- HERO -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-8">
+          <div class="space-y-8 fade-up">
+            <div class="inline-block">
+              <span class="px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500/20 to-pink-500/20 border border-indigo-500/30 text-indigo-300 text-sm font-semibold">✨ Your Campus Events Hub</span>
+            </div>
+            <div>
+              <h1 class="text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tight bg-gradient-to-r from-slate-100 via-indigo-200 to-pink-200 bg-clip-text text-transparent">Never Miss Campus Life</h1>
+            </div>
+            <p class="text-lg text-slate-300 max-w-xl leading-relaxed">Discover events, connect with clubs, and be part of a thriving campus community. All in one place.</p>
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+              <a href="clubs.html" class="px-8 py-4 bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white font-bold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2">
+                Explore Events <span>→</span>
+              </a>
+              <a href="clubs.html" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-slate-100 font-semibold rounded-xl border border-slate-700 transition-all duration-200 inline-flex items-center justify-center gap-2">
+                Browse Clubs <span>→</span>
+              </a>
+            </div>
+            <div class="pt-8 flex items-center gap-8 text-slate-400 text-sm">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl font-bold text-slate-100">10k+</span>
+                <span>Students</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-2xl font-bold text-slate-100">500+</span>
+                <span>Events</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-2xl font-bold text-slate-100">150+</span>
+                <span>Clubs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative hidden lg:block">
+            <div class="absolute -top-12 -right-12 w-64 h-64 rounded-3xl bg-gradient-to-br from-indigo-500 to-pink-500 opacity-20 blur-3xl"></div>
+            <div class="absolute -bottom-12 right-20 w-48 h-48 rounded-3xl bg-gradient-to-br from-teal-500 to-violet-500 opacity-20 blur-3xl"></div>
+            <div class="relative h-96 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 shadow-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-50"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="text-5xl">🎉</div>
+                  <p class="mt-4 text-slate-300 font-semibold">Campus Events</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Events + Filters -->
+        <section class="mt-20">
+          <div class="mb-12">
+            <h2 class="text-4xl font-bold text-slate-100">Featured Events</h2>
+            <p class="text-slate-400 mt-2">Explore the hottest events happening on campus</p>
+          </div>
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8">
+            <div class="flex items-center gap-3 flex-wrap">
+              <div class="relative">
+                <button id="catBtn" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-100 font-medium rounded-lg transition-all duration-200 text-sm">All Categories ▾</button>
+                <div id="catMenu" class="hidden absolute left-0 mt-2 w-56 bg-slate-900 border border-slate-700 rounded-lg p-4 shadow-xl">
+                  <label class="flex items-center gap-3 cursor-pointer p-2 hover:bg-slate-800 rounded transition-colors"><input type="checkbox" value="technical" class="catCheck w-4 h-4" /> <span class="text-slate-300">Technical</span></label>
+                  <label class="flex items-center gap-3 cursor-pointer p-2 hover:bg-slate-800 rounded transition-colors mt-2"><input type="checkbox" value="cultural" class="catCheck w-4 h-4" /> <span class="text-slate-300">Cultural</span></label>
+                  <label class="flex items-center gap-3 cursor-pointer p-2 hover:bg-slate-800 rounded transition-colors mt-2"><input type="checkbox" value="sports" class="catCheck w-4 h-4" /> <span class="text-slate-300">Sports</span></label>
+                </div>
+              </div>
+              <div class="bg-slate-800 border border-slate-700 rounded-lg p-1 flex">
+                <button data-tab="upcoming" class="px-4 py-2 text-slate-400 hover:text-slate-100 tab text-sm font-medium transition-colors">Upcoming</button>
+                <button data-tab="featured" class="px-4 py-2 tab text-sm font-medium bg-gradient-to-r from-indigo-500 to-pink-500 text-white rounded transition-all">Featured</button>
+                <button data-tab="deleted" class="px-4 py-2 text-slate-400 hover:text-slate-100 tab text-sm font-medium transition-colors">Deleted</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="events" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 6 premium event cards -->
+            <article data-status="featured" data-cat="technical" class="card overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl border border-slate-700 hover:border-indigo-500/50">
+              <div class="h-40 bg-gradient-to-br from-indigo-600 to-purple-600 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-30 bg-[url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2220%22 cy=%2220%22 r=%2215%22 fill=%22%23ffffff%22 opacity=%22.1%22/><circle cx=%2280%22 cy=%2270%22 r=%2220%22 fill=%22%23ffffff%22 opacity=%22.1%22/></svg>')]"></div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-indigo-300 font-medium">Coding Club · Oct 24</span>
+                  <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-xs font-semibold">Offline</span>
+                </div>
+                <h3 class="mt-4 text-xl font-bold text-slate-100">AI Hackathon 2026</h3>
+                <p class="mt-2 text-slate-400 text-sm leading-relaxed">Build the next generation of AI applications in this 24-hour intense hackathon.</p>
+                <div class="mt-4 flex items-center justify-between">
+                  <a href="event-detail.html" class="text-indigo-400 hover:text-indigo-300 font-semibold text-sm transition-colors">View Details →</a>
+                  <span class="text-slate-500 text-xs">12 going</span>
+                </div>
+              </div>
+            </article>
+
+            <article data-status="upcoming" data-cat="workshops" class="card overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl border border-slate-700 hover:border-pink-500/50">
+              <div class="h-40 bg-gradient-to-br from-rose-600 to-red-700"></div>
+              <div class="p-6">
+                <div class="text-sm text-pink-300 font-medium">Design Society · Oct 26</div>
+                <h3 class="mt-4 text-xl font-bold text-slate-100">UI/UX Workshop</h3>
+                <p class="mt-2 text-slate-400 text-sm leading-relaxed">Learn fundamentals of designing user-centric interfaces with Figma.</p>
+                <div class="mt-4 flex items-center justify-between">
+                  <a href="event-detail.html" class="text-pink-400 hover:text-pink-300 font-semibold text-sm transition-colors">View Details →</a>
+                  <span class="text-slate-500 text-xs">8 going</span>
+                </div>
+              </div>
+            </article>
+
+            <article data-status="upcoming" data-cat="sports" class="card overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl border border-slate-700 hover:border-emerald-500/50">
+              <div class="h-40 bg-gradient-to-br from-emerald-600 to-green-700"></div>
+              <div class="p-6">
+                <div class="text-sm text-emerald-300 font-medium">Robotics Club · Nov 02</div>
+                <h3 class="mt-4 text-xl font-bold text-slate-100">Bot Wars 2026</h3>
+                <p class="mt-2 text-slate-400 text-sm leading-relaxed">Watch autonomous robots battle for supremacy in the main arena.</p>
+                <div class="mt-4 flex items-center justify-between">
+                  <a href="event-detail.html" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm transition-colors">View Details →</a>
+                  <span class="text-slate-500 text-xs">24 going</span>
+                </div>
+              </div>
+            </article>
+
+            <article data-status="deleted" data-cat="cultural" class="card overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl border border-slate-700 hover:border-cyan-500/50">
+              <div class="h-40 bg-gradient-to-br from-cyan-500 to-sky-700"></div>
+              <div class="p-6">
+                <div class="text-sm text-cyan-300 font-medium">Cultural Club · Nov 10</div>
+                <h3 class="mt-4 text-xl font-bold text-slate-100">Cultural Night</h3>
+                <p class="mt-2 text-slate-400 text-sm leading-relaxed">An evening of music, dance, and performances from across campus.</p>
+                <div class="mt-4 flex items-center justify-between">
+                  <a href="event-detail.html" class="text-cyan-400 hover:text-cyan-300 font-semibold text-sm transition-colors">View Details →</a>
+                  <span class="text-slate-500 text-xs">6 going</span>
+                </div>
+              </div>
+            </article>
+
+            <article data-status="featured" data-cat="sports" class="card overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl border border-slate-700 hover:border-violet-500/50">
+              <div class="h-40 bg-gradient-to-br from-violet-500 to-fuchsia-600"></div>
+              <div class="p-6">
+                <div class="text-sm text-violet-300 font-medium">Sports Club · Nov 12</div>
+                <h3 class="mt-4 text-xl font-bold text-slate-100">Intercollege Football</h3>
+                <p class="mt-2 text-slate-400 text-sm leading-relaxed">Quarter-final matches across departments.</p>
+                <div class="mt-4 flex items-center justify-between">
+                  <a href="event-detail.html" class="text-violet-400 hover:text-violet-300 font-semibold text-sm transition-colors">View Details →</a>
+                  <span class="text-slate-500 text-xs">42 going</span>
+                </div>
+              </div>
+            </article>
+
+            <article data-status="upcoming" data-cat="technical" class="card overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl border border-slate-700 hover:border-pink-500/50">
+              <div class="h-40 bg-gradient-to-br from-pink-500 to-rose-600"></div>
+              <div class="p-6">
+                <div class="text-sm text-pink-300 font-medium">Science Club · Nov 22</div>
+                <h3 class="mt-4 text-xl font-bold text-slate-100">Research Symposium</h3>
+                <p class="mt-2 text-slate-400 text-sm leading-relaxed">Student research showcased with poster sessions and talks.</p>
+                <div class="mt-4 flex items-center justify-between">
+                  <a href="event-detail.html" class="text-pink-400 hover:text-pink-300 font-semibold text-sm transition-colors">View Details →</a>
+                  <span class="text-slate-500 text-xs">18 going</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Followed Clubs -->
+        <section class="mt-20">
+          <div class="mb-12">
+            <h2 class="text-4xl font-bold text-slate-100">Popular Clubs</h2>
+            <p class="text-slate-400 mt-2">Join communities that match your interests</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card flex items-center gap-4 hover:scale-105 transition-all duration-300 border border-slate-700 hover:border-indigo-500/50">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex-shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <div class="font-bold text-slate-100">Coding Club</div>
+                <div class="text-slate-400 text-sm">Hackathons & mentoring</div>
+              </div>
+              <div class="text-sm font-bold text-indigo-400 flex-shrink-0">1.2k</div>
+            </div>
+            <div class="card flex items-center gap-4 hover:scale-105 transition-all duration-300 border border-slate-700 hover:border-pink-500/50">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex-shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <div class="font-bold text-slate-100">Design Society</div>
+                <div class="text-slate-400 text-sm">Workshops & critiques</div>
+              </div>
+              <div class="text-sm font-bold text-pink-400 flex-shrink-0">820</div>
+            </div>
+            <div class="card flex items-center gap-4 hover:scale-105 transition-all duration-300 border border-slate-700 hover:border-emerald-500/50">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex-shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <div class="font-bold text-slate-100">Robotics Club</div>
+                <div class="text-slate-400 text-sm">Hardware & competitions</div>
+              </div>
+              <div class="text-sm font-bold text-emerald-400 flex-shrink-0">560</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="mt-20 rounded-2xl p-12 bg-gradient-to-r from-indigo-600/20 via-purple-600/20 to-pink-600/20 border border-indigo-500/30 shadow-2xl">
+          <div class="max-w-3xl mx-auto text-center space-y-6">
+            <h3 class="text-4xl font-bold text-slate-100">Join 10,000+ Students Today</h3>
+            <p class="text-lg text-slate-300">Be part of the thriving campus community. Get event notifications, connect with clubs, and make the most of your university.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <a href="signup.html" class="px-8 py-4 bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white font-bold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg inline-flex items-center justify-center">
+                Start Exploring →
+              </a>
+              <a href="clubs.html" class="px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-600 text-slate-100 font-semibold rounded-xl transition-all duration-200 inline-flex items-center justify-center">
+                Browse Events
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="mt-24 border-t border-slate-800 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+              <span class="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">CampusX</span>
+              <p class="text-slate-400 text-sm mt-3">Discover campus events and connect with communities</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-4">Platform</h4>
+              <ul class="space-y-2 text-sm text-slate-400">
+                <li><a href="index.html" class="hover:text-slate-100 transition-colors">Home</a></li>
+                <li><a href="clubs.html" class="hover:text-slate-100 transition-colors">Clubs</a></li>
+                <li><a href="my-events.html" class="hover:text-slate-100 transition-colors">My Events</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-4">Company</h4>
+              <ul class="space-y-2 text-sm text-slate-400">
+                <li><a href="index.html" class="hover:text-slate-100 transition-colors">About</a></li>
+                <li><a href="index.html" class="hover:text-slate-100 transition-colors">Blog</a></li>
+                <li><a href="index.html" class="hover:text-slate-100 transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-100 mb-4">Legal</h4>
+              <ul class="space-y-2 text-sm text-slate-400">
+                <li><a href="terms.html" class="hover:text-slate-100 transition-colors">Terms</a></li>
+                <li><a href="privacy.html" class="hover:text-slate-100 transition-colors">Privacy</a></li>
+                <li><a href="index.html" class="hover:text-slate-100 transition-colors">Status</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-400 text-sm">
+            <div>© 2026 CampusX. All rights reserved.</div>
+            <div class="flex gap-6">
+              <a href="#" class="hover:text-slate-100 transition-colors">Twitter</a>
+              <a href="#" class="hover:text-slate-100 transition-colors">Instagram</a>
+              <a href="#" class="hover:text-slate-100 transition-colors">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        (function(){
+          // Mobile menu (UI-only)
+          const mobileBtn = document.getElementById('mobileMenuBtn');
+          mobileBtn && mobileBtn.addEventListener('click', ()=> alert('Mobile menu (UI only)'));
+
+          // Tabs
+          const tabContainer = document.getElementById('tabBtns');
+          const tabs = Array.from(document.querySelectorAll('#tabBtns .tab'));
+          const events = Array.from(document.querySelectorAll('#events article'));
+
+          function setTab(name){
+            tabs.forEach(t=>{
+              const isActive = t.getAttribute('data-tab')===name;
+              t.classList.toggle('btn-primary', isActive);
+              t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+              t.tabIndex = isActive ? 0 : -1;
+            });
+            events.forEach(e=>{ e.style.display = (name==='all' || e.dataset.status===name) ? '' : 'none' });
+          }
+
+          // Click activation
+          tabContainer && tabContainer.addEventListener('click', (ev)=>{
+            const b = ev.target.closest('.tab'); if(!b) return; setTab(b.getAttribute('data-tab')); b.focus();
+          });
+
+          // Keyboard navigation for tabs
+          tabContainer && tabContainer.addEventListener('keydown', (ev)=>{
+            const key = ev.key;
+            const current = document.activeElement;
+            if(!current || !current.classList.contains('tab')) return;
+            const idx = tabs.indexOf(current);
+            if(key === 'ArrowRight' || key === 'ArrowDown'){
+              ev.preventDefault(); const next = tabs[(idx+1)%tabs.length]; next.focus();
+            } else if(key === 'ArrowLeft' || key === 'ArrowUp'){
+              ev.preventDefault(); const prev = tabs[(idx-1+tabs.length)%tabs.length]; prev.focus();
+            } else if(key === 'Home'){
+              ev.preventDefault(); tabs[0].focus();
+            } else if(key === 'End'){
+              ev.preventDefault(); tabs[tabs.length-1].focus();
+            } else if(key === 'Enter' || key === ' '){
+              ev.preventDefault(); setTab(current.getAttribute('data-tab'));
+            }
+          });
+
+          // Init default tab
+          setTab('featured');
+
+          // Category dropdown with keyboard support
+          const catBtn = document.getElementById('catBtn');
+          const catMenu = document.getElementById('catMenu');
+          const catChecks = Array.from(document.querySelectorAll('.catCheck'));
+
+          function applyCategoryFilter(){
+            const checked = catChecks.filter(c=>c.checked).map(c=>c.value);
+            events.forEach(e=>{ const cat = e.dataset.cat; const visible = checked.length===0 || checked.includes(cat); e.style.display = visible ? '' : 'none'; });
+          }
+
+          function openCatMenu(){
+            catMenu.classList.remove('hidden');
+            catBtn.setAttribute('aria-expanded','true');
+            // focus first checkbox
+            const first = catMenu.querySelector('input'); if(first) first.focus();
+          }
+          function closeCatMenu(){
+            catMenu.classList.add('hidden');
+            catBtn.setAttribute('aria-expanded','false');
+            catBtn.focus();
+          }
+
+          catBtn && catBtn.addEventListener('click', ()=>{
+            const isOpen = !catMenu.classList.contains('hidden');
+            isOpen ? closeCatMenu() : openCatMenu();
+          });
+
+          // keyboard on button
+          catBtn && catBtn.addEventListener('keydown', (ev)=>{
+            if(ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openCatMenu(); }
+            if(ev.key === 'Escape') closeCatMenu();
+          });
+
+          // keyboard inside menu (up/down, space to toggle, esc to close)
+          catMenu && catMenu.addEventListener('keydown', (ev)=>{
+            const focusables = Array.from(catMenu.querySelectorAll('input'));
+            const idx = focusables.indexOf(document.activeElement);
+            if(ev.key === 'ArrowDown'){ ev.preventDefault(); const next = focusables[(idx+1)%focusables.length]; next && next.focus(); }
+            else if(ev.key === 'ArrowUp'){ ev.preventDefault(); const prev = focusables[(idx-1+focusables.length)%focusables.length]; prev && prev.focus(); }
+            else if(ev.key === ' '){ ev.preventDefault(); if(document.activeElement && document.activeElement.type === 'checkbox') { document.activeElement.checked = !document.activeElement.checked; applyCategoryFilter(); } }
+            else if(ev.key === 'Escape'){ closeCatMenu(); }
+          });
+
+          // checkbox change
+          catChecks.forEach(cb=>cb.addEventListener('change', applyCategoryFilter));
+
+          // click outside to close
+          document.addEventListener('click', (e)=>{ if(catBtn && catMenu && !catBtn.contains(e.target) && !catMenu.contains(e.target)) closeCatMenu(); });
+
+        })();
+      </script>
+      <script src="/scripts/register-sw.js" defer></script>
+    </body>
+  </html>

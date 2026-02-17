@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CampusX — Clubs</title>
+    <meta name="description" content="Browse and join student clubs at your campus. Explore technical, cultural, sports and more communities on CampusX.">
+    <meta name="keywords" content="student clubs, campus clubs, technical clubs, cultural clubs, sports clubs">
+    <meta name="canonical" href="https://campus-x.example.com/clubs.html">
+    <meta property="og:title" content="CampusX — Clubs">
+    <meta property="og:description" content="Browse and join student clubs at your campus.">
+    <meta property="og:image" content="https://campus-x.example.com/assets/logo-512.png">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { accentFrom: '#22d3ee', accentTo: '#7c3aed' } } } }</script>
+    <link rel="stylesheet" href="styles/aliases.css">
+    <style>.glass{background:rgba(8,10,14,0.45);backdrop-filter:blur(6px);border:1px solid rgba(148,163,184,0.06)}</style>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <header class="sticky top-0 glass px-4 py-3">
+      <div class="max-w-6xl mx-auto flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-3"><span class="text-xl font-bold bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent">CampusX</span></a>
+        <div class="flex-1">
+          <label class="relative block max-w-md mx-auto md:mx-0">
+            <input placeholder="Search clubs..." class="w-full rounded-full bg-slate-900 border border-slate-800 px-4 py-2 text-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/25 transition-all duration-300" />
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
+          </label>
+        </div>
+        <a href="login.html" class="text-slate-300 hidden md:inline">Login</a>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+      <div class="flex items-center justify-between">
+        <h1 class="text-3xl font-bold">Clubs</h1>
+        <div class="flex gap-2">
+          <button class="btn-ghost">All Categories</button>
+          <button class="btn-ghost">Popular</button>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="mt-6 flex gap-2 flex-wrap">
+        <button class="btn-ghost">Technical</button>
+        <button class="btn-ghost">Cultural</button>
+        <button class="btn-ghost">Sports</button>
+      </div>
+
+      <!-- Clubs grid -->
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Club card -->
+        <article class="card hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-accentFrom to-accentTo"></div>
+            <div>
+              <div class="font-semibold">Coding Club</div>
+              <div class="text-slate-400 text-sm">Hackathons, AI projects and mentorship</div>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-sm text-slate-400">Updated 2d ago</div>
+            <div class="text-sm text-slate-300">1.2k members</div>
+          </div>
+        </article>
+
+        <!-- repeat sample cards -->
+        <article class="bg-slate-900 border border-slate-800 rounded-2xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500"></div>
+            <div>
+              <div class="font-semibold">Design Society</div>
+              <div class="text-slate-400 text-sm">UI/UX workshops</div>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between"><div class="text-sm text-slate-400">Updated 5d ago</div><div class="text-sm text-slate-300">820 members</div></div>
+        </article>
+
+        <article class="bg-slate-900 border border-slate-800 rounded-2xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-green-600"></div>
+            <div>
+              <div class="font-semibold">Robotics Club</div>
+              <div class="text-slate-400 text-sm">Hardware & competitions</div>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between"><div class="text-sm text-slate-400">Updated 1w ago</div><div class="text-sm text-slate-300">560 members</div></div>
+        </article>
+      </div>
+
+      <!-- Pagination UI -->
+      <div class="mt-10 flex justify-center">
+        <div class="inline-flex gap-3">
+          <button class="px-4 py-2 bg-slate-900 border border-slate-800 rounded-md">Previous</button>
+          <button class="px-4 py-2 bg-gradient-to-r from-accentFrom to-accentTo text-black rounded-md">1</button>
+          <button class="px-4 py-2 bg-slate-900 border border-slate-800 rounded-md">Next</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-8 text-center text-slate-400">© CampusX</footer>
+    <script src="/scripts/register-sw.js" defer></script>
+  </body>
+</html>
